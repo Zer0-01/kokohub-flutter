@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_kokohub/configuration/router/router.gr.dart';
 import 'package:flutter_kokohub/utils/constants/sizes_constant.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -58,7 +60,9 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               TextButton(
-                  onPressed: () {}, child: const Text("Create new account"))
+                  onPressed: () =>
+                      context.router.push(const RegisterSetupRoute()),
+                  child: const Text("Create new account"))
             ],
           ),
         ),
