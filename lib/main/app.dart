@@ -17,6 +17,7 @@ class App extends StatelessWidget {
       light: _buildLightTheme(),
       dark: _buildDarkTheme(),
       initial: AdaptiveThemeMode.dark,
+      debugShowFloatingThemeButton: true,
       builder: (light, dark) => _buildMaterialApp(appRouter, light, dark),
     );
   }
@@ -24,8 +25,10 @@ class App extends StatelessWidget {
   ThemeData _buildLightTheme() =>
       ThemeData(useMaterial3: true, brightness: Brightness.light);
 
-  ThemeData _buildDarkTheme() =>
-      ThemeData(useMaterial3: true, brightness: Brightness.dark);
+  ThemeData _buildDarkTheme() => ThemeData(
+        useMaterial3: true,
+        brightness: Brightness.dark,
+      );
 
   MaterialApp _buildMaterialApp(
       AppRouter appRouter, ThemeData light, ThemeData dark) {
